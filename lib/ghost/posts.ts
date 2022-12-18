@@ -6,11 +6,15 @@ import GhostContentAPI from "@tryghost/content-api";
 //     };
 //   };
   
+const ghostURL: string = process.env.GHOST_URL || ''
+const ghostKey: string = process.env.GHOST_KEY || ''
+const ghostVersion: string = process.env.GHOST_VERSION || 'v5.0'
+
 const api = new GhostContentAPI({
-    url: process.env.GHOST_VERSION || '',
-    key: process.env.GHOST_VERSION || '',
+    url: ghostURL,
+    key: ghostKey,
     // @ts-expect-error
-    version: process.env.GHOST_VERSION
+    version: ghostVersion
 })
 
 export {}
