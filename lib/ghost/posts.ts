@@ -1,16 +1,16 @@
 import GhostContentAPI from "@tryghost/content-api";
 
-declare const process: {
-    env: {
-      [key: string]: string | undefined;
-    };
-  };
+// declare const process: {
+//     env: {
+//       [key: string]: string | undefined;
+//     };
+//   };
   
 const api = new GhostContentAPI({
-    url: '',
-    key: '',
+    url: process.env.GHOST_VERSION || '',
+    key: process.env.GHOST_VERSION || '',
+    // @ts-expect-error
     version: process.env.GHOST_VERSION
-    // version: 'v5.0'
 })
 
 export {}
