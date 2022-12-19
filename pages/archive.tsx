@@ -22,3 +22,12 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
         props: { posts }
     }
 }
+
+const Archive = () => {
+    return (
+        <div>
+          <h1>Post Form</h1>
+        </div>
+    )}
+  
+export default Archive;
