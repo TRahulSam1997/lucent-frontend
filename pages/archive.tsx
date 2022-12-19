@@ -9,8 +9,9 @@ interface Posts {
 }
 
 interface Post {
-    id: any; 
-    title: any;
+    id: string; 
+    title: string;
+    excerpt: string;
 }
 
 interface Props {
@@ -33,12 +34,18 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
 
 const Archive = (props: Props) => {
+    // console.log(props)
     return (
         <div>
           <h1>Post Form</h1>
           <ul>
             {props.posts.map((post: Post) => (
-                <li key={post.id}>{post.title}</li>
+                <li key={post.id}>
+                    {post.title}
+                    <p>
+                        {post.excerpt}
+                    </p>
+                </li>
             ))}
           </ul>
         </div>
