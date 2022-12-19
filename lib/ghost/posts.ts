@@ -1,10 +1,4 @@
 import GhostContentAPI from "@tryghost/content-api";
-
-// declare const process: {
-//     env: {
-//       [key: string]: string | undefined;
-//     };
-//   };
   
 const ghostURL: string = process.env.GHOST_URL || '';
 const ghostKey: string = process.env.GHOST_KEY || '';

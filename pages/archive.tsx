@@ -1,3 +1,4 @@
+// @ts-expect-error
 import { getPosts } from 'lib/ghost/posts';
 import { GetStaticProps } from 'next';
 import { Key, ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
@@ -30,19 +31,16 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
     }
 }
 
-const IndexPage = (props: Props) => (
-    <ul>
-        {props.posts.map((post: Post) => (
-            <li key={post.id}>{post.title}</li>
-        ))}
-    </ul>
-);
 
-
-const Archive = () => {
+const Archive = (props: Props) => {
     return (
         <div>
           <h1>Post Form</h1>
+          <ul>
+            {props.posts.map((post: Post) => (
+                <li key={post.id}>{post.title}</li>
+            ))}
+          </ul>
         </div>
     )}
   
