@@ -15,7 +15,7 @@ export interface Post {
     html: string;
 }
 
-interface Props {
+export interface Props {
     posts: Posts;
 }
 
