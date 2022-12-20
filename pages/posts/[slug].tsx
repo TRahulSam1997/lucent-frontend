@@ -41,3 +41,5 @@ export const getStaticProps = async (context: Context): Promise<{
       props: { post },
     };
 }
+
+export default PostPage
