@@ -1,6 +1,7 @@
 // @ts-expect-error
 import { getPosts } from 'lib/ghost/posts';
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 
 export interface Posts {
     [x: string]: any;
@@ -35,17 +36,18 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
 
 const Archive = (props: Props) => {
-    // console.log(props)
     return (
         <div>
           <h1>Post Form</h1>
           <ul>
             {props.posts.map((post: Post) => (
                 <li key={post.id}>
-                    {post.title}
-                    <p>
-                        {post.excerpt}
-                    </p>
+                    <Link href={`posts/${post.slug}`}>
+                        {post.title}
+                        <p>
+                            {post.excerpt}
+                        </p>
+                    </Link>
                 </li>
             ))}
           </ul>
