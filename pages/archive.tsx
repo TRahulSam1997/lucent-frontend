@@ -2,15 +2,17 @@
 import { getPosts } from 'lib/ghost/posts';
 import { GetStaticProps } from 'next';
 
-interface Posts {
+export interface Posts {
     [x: string]: any;
 
 }
 
-interface Post {
+export interface Post {
+    slug: string;
     id: string; 
     title: string;
     excerpt: string;
+    html: string;
 }
 
 interface Props {
