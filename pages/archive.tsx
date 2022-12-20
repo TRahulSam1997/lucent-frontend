@@ -1,7 +1,6 @@
 // @ts-expect-error
 import { getPosts } from 'lib/ghost/posts';
 import { GetStaticProps } from 'next';
-import { Key, ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
 
 interface Posts {
     [x: string]: any;

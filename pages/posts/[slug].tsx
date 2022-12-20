@@ -1,0 +1,1 @@
+import { getSinglePost } from "../../lib/ghost/posts";
