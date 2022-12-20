@@ -1,10 +1,11 @@
 // @ts-expect-error
 import { getSinglePost, getPosts } from "lib/ghost/posts";
-import { GetStaticProps } from "next";
-import { Post, Posts, Props } from "../archive";
+import { Post, Posts } from "../archive";
 
-interface Params {
-    slug: string;
+interface Context {
+    params: {
+        slug: string;
+    }
 } 
 
 const PostPage = (props: {post: Post}) => {
@@ -16,7 +17,7 @@ const PostPage = (props: {post: Post}) => {
     )
 }
 
-export async function getStaticPaths<GetStaticPaths>() {
+export async function getStaticPaths() {
     const posts: Posts = await getPosts();
 
     const paths: string = posts.map((post: Post) => ({
@@ -26,7 +27,8 @@ export async function getStaticPaths<GetStaticPaths>() {
     return { paths, fallback: false }
 }
 
-export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
+export const getStaticProps = async (context: Context): Promise<{
+    notFound: boolean } | { props: Posts }> => {
     const post = await getSinglePost(context.params.slug);
 
     if (!post) {
