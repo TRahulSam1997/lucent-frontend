@@ -14,9 +14,10 @@ export const api = new GhostContentAPI({
 export async function getPosts() {
   return await api.posts
     .browse({
+      include:['tags', 'authors'],
       limit: 'all'
     })
-    .catch(err => {
+    .catch((err: Error) => {
       console.log(err);
     })
 }

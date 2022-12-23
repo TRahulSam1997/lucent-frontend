@@ -5,7 +5,7 @@ const getPages = async () => {
         .browse({
             limit: "all"
         })
-        .catch(err => {
+        .catch((err: Error) => {
             console.error(err);
         }) 
 }
