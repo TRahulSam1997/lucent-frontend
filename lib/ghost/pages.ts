@@ -1,6 +1,6 @@
 import { api } from "./posts";
  
-const getPages = async () => {
+export const getPages = async () => {
     return await api.pages
         .browse({
             limit: "all"
