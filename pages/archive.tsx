@@ -13,6 +13,7 @@ export interface Post {
     title: string;
     excerpt: string;
     html: string;
+    published_at: string;
 }
 
 export interface Props {
@@ -33,6 +34,11 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
     }
 }
 
+const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  };
 
 const Archive = (props: Props) => {
     return (
@@ -45,6 +51,9 @@ const Archive = (props: Props) => {
                         {post.title}
                         <p>
                             {post.excerpt}
+                        </p>
+                        <p>
+                            {new Intl.DateTimeFormat('en-US', options).format(new Date(post.published_at))}
                         </p>
                     </Link>
                     <br />
