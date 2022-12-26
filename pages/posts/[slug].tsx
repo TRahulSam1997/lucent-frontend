@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async (context: Context): Promise<{
     notFound: boolean } | { props: Posts }> => {
-    const post = await getSinglePost(context.params.slug);
+    const post: Post = await getSinglePost(context.params.slug);
 
     if (!post) {
       return {

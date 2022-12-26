@@ -2,7 +2,8 @@ import React from 'react'
 // @ts-expect-error
 import { getAllAuthors } from 'lib/ghost/authors';
 import { Context } from '../posts/[slug]';
-import { getAuthor } from '../../lib/ghost/authors';
+// @ts-expect-error
+import { getAuthor } from 'lib/ghost/authors';
 
 interface Author {
   name: string;
@@ -38,6 +39,17 @@ export const getStaticPaths = async () => {
 
 export default AuthorPage
 
-export const getStaticProps = async (context: Context) => {
-  const author = await getAuthor(context.params.name);
+export const getStaticProps = async (context: Context): Promise<{
+  notFound: boolean } | { props: AuthorProps }> => {
+  const author: Author = await getAuthor(context.params.name);
+
+  if (!author) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { author }
+  }
 }
