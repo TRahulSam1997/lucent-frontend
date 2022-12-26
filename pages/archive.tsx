@@ -47,6 +47,7 @@ const Archive = (props: Props) => {
                             {post.excerpt}
                         </p>
                     </Link>
+                    <br />
                 </li>
             ))}
           </ul>

@@ -6,6 +6,10 @@ interface Author {
   bio: string;
 }
 
+interface Authors {
+  [x: string]: any;
+}
+
 interface AuthorProps {
   author: Author;
 }
@@ -19,9 +23,25 @@ const AuthorPage = (props:AuthorProps) => {
   )
 }
 
-export const getStaticPaths = async () => {
-  const authors = await getAllAuthors()
-  
-}
+// export const getStaticPaths = async () => {
+//   const authors: Authors = await getAllAuthors();
+
+//   const paths: string = authors.map((author: Author) => ({
+//     params: { name: author.name }
+//   }))
+
+//   return { paths, fallback: false }
+// }
+
+
+// export async function getStaticPaths() {
+//   const posts: Posts = await getPosts();
+
+//   const paths: string = posts.map((post: Post) => ({
+//       params: { slug: post.slug }
+//   }))
+
+//   return { paths, fallback: false }
+// }
 
 export default AuthorPage
