@@ -27,6 +27,7 @@ export async function getStaticPaths() {
     return { paths, fallback: false }
 }
 
+
 export const getStaticProps = async (context: Context): Promise<{
     notFound: boolean } | { props: Posts }> => {
     const post = await getSinglePost(context.params.slug);

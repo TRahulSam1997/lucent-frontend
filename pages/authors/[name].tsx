@@ -1,5 +1,7 @@
 import React from 'react'
 import { getAllAuthors } from '../../lib/ghost/authors';
+import { getPosts } from '../../lib/ghost/posts';
+import { Post, Posts } from '../archive';
 
 interface Author {
   name: string;
@@ -32,7 +34,6 @@ const AuthorPage = (props:AuthorProps) => {
 
 //   return { paths, fallback: false }
 // }
-
 
 // export async function getStaticPaths() {
 //   const posts: Posts = await getPosts();

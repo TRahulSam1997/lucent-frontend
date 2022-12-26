@@ -10,7 +10,17 @@ export const getAuthor = async (authorSlug:string) => {
         });
 }
 
-export const getAllAuthors = async () => {
+// export const getAllAuthors = async () => {
+//     return await api.authors
+//     .browse({
+//         limit: 'all'
+//     })
+//     .catch((err: Error) => {
+//         console.log(err);
+//     })
+// }
+
+export async function getAllAuthors() {
     return await api.authors
     .browse({
         limit: 'all'
@@ -18,4 +28,4 @@ export const getAllAuthors = async () => {
     .catch((err: Error) => {
         console.log(err);
     })
-}
+  }
