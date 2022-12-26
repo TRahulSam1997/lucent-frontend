@@ -2,9 +2,10 @@
 import { getSinglePost, getPosts } from "lib/ghost/posts";
 import { Post, Posts } from "../archive";
 
-interface Context {
+export interface Context {
     params: {
         slug: string;
+        name: string;
     }
 } 
 
@@ -26,7 +27,6 @@ export async function getStaticPaths() {
 
     return { paths, fallback: false }
 }
-
 
 export const getStaticProps = async (context: Context): Promise<{
     notFound: boolean } | { props: Posts }> => {

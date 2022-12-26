@@ -1,7 +1,8 @@
 import React from 'react'
-import { getAllAuthors } from '../../lib/ghost/authors';
-import { getPosts } from '../../lib/ghost/posts';
-import { Post, Posts } from '../archive';
+// @ts-expect-error
+import { getAllAuthors } from 'lib/ghost/authors';
+import { Context } from '../posts/[slug]';
+import { getAuthor } from '../../lib/ghost/authors';
 
 interface Author {
   name: string;
@@ -25,24 +26,18 @@ const AuthorPage = (props:AuthorProps) => {
   )
 }
 
-// export const getStaticPaths = async () => {
-//   const authors: Authors = await getAllAuthors();
+export const getStaticPaths = async () => {
+  const authors: Authors = await getAllAuthors();
 
-//   const paths: string = authors.map((author: Author) => ({
-//     params: { name: author.name }
-//   }))
+  const paths: string = authors.map((author: Author) => ({
+    params: { name: author.name }
+  }))
 
-//   return { paths, fallback: false }
-// }
-
-// export async function getStaticPaths() {
-//   const posts: Posts = await getPosts();
-
-//   const paths: string = posts.map((post: Post) => ({
-//       params: { slug: post.slug }
-//   }))
-
-//   return { paths, fallback: false }
-// }
+  return { paths, fallback: false }
+}
 
 export default AuthorPage
+
+export const getStaticProps = async (context: Context) => {
+  const author = await getAuthor(context.params.name);
+}
