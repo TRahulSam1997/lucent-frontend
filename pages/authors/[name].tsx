@@ -18,7 +18,7 @@ interface AuthorProps {
   author: Author;
 }
 
-const AuthorPage = (props:AuthorProps) => {
+const AuthorPage = (props: AuthorProps) => {
   return (
     <div> 
       <h1>{props.author.name}</h1>
