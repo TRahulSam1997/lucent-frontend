@@ -37,19 +37,20 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export default AuthorPage
 
 export const getStaticProps = async (context: Context): Promise<{
   notFound: boolean } | { props: AuthorProps }> => {
-  const author: Author = await getAuthor(context.params.name);
-
-  if (!author) {
+    const author: Author = await getAuthor(context.params.name);
+    
+    if (!author) {
+      return {
+        notFound: true,
+      }
+    }
+    
     return {
-      notFound: true,
+      props: { author }
     }
   }
-
-  return {
-    props: { author }
-  }
-}
+  
+export default AuthorPage
