@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export interface Posts {
     [x: string]: any;
-
 }
 
 export interface Post {

@@ -9,3 +9,5 @@ export const getAuthor = async (authorSlug:string) => {
             console.log(err);
         });
 }
+
+export const getAllAuthors = async () => {}
