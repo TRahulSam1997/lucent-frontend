@@ -17,6 +17,12 @@ export default function Home() {
       </Head>
       <main>
         <Nav />
+        <div>
+          <h1>Left Side</h1>
+        </div>
+        <div>
+          <h1>Right Side</h1>
+        </div>
       </main>
     </>
   )
