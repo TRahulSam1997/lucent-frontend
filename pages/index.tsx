@@ -19,8 +19,10 @@ export default function Home() {
       </Head>
       <main>
         <Nav />
-        <LeftPanel />
-        <RightPanel />
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <LeftPanel />
+          <RightPanel />
+        </div>
       </main>
     </>
   )
