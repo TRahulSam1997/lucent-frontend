@@ -17,7 +17,6 @@ export default function Home() {
       </Head>
       <main>
         <Nav />
-        <h1>Lucent</h1>
       </main>
     </>
   )
