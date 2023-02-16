@@ -9,7 +9,8 @@ export const ConnectSection = () => {
             title="Source: Slack (https://Slack.com)"
         />
         <h1>Connect</h1>
-
+        <h3>Collaborate on product design and engineering.</h3>
+        <button>Join the community</button>
     </div>
   )
 }
