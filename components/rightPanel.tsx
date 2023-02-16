@@ -1,6 +1,7 @@
 import React from 'react'
 import { BuildSection } from './sections/buildSection'
 import { ConnectSection } from './sections/connectSection'
+import { FindACTOSection } from './sections/findACTOSection'
 
 export const RightPanel = () => {
   return (
@@ -11,6 +12,7 @@ export const RightPanel = () => {
             <BuildSection />
           </div>
           <ConnectSection />
+          <FindACTOSection />
         </div>
     </div>
   )
