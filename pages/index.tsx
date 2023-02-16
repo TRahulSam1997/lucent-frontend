@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Nav from '../components/nav'
+import { LeftPanel } from '../components/leftPanel'
+import { RightPanel } from '../components/rightPanel'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,12 +19,8 @@ export default function Home() {
       </Head>
       <main>
         <Nav />
-        <div>
-          <h1>Left Side</h1>
-        </div>
-        <div>
-          <h1>Right Side</h1>
-        </div>
+        <LeftPanel />
+        <RightPanel />
       </main>
     </>
   )
