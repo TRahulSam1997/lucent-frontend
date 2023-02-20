@@ -1,12 +1,16 @@
 import React from 'react'
 import { InProgressCube } from '../icons/inProgressCube'
+import { VerticleLine } from '../icons/verticleLine'
 
 export const LearnSection = () => {
   return (
     <div>
         <div>
             <h3>Learn</h3>
-            <p>Gain a comprehensive understanding of startup engineering with structured courses and mentorship.</p>
+            <div>
+                <VerticleLine />
+                <p>Gain a comprehensive understanding of startup engineering with structured courses and mentorship.</p>
+            </div>
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
             <InProgressCube />
