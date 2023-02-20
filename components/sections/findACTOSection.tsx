@@ -1,5 +1,5 @@
 import React from 'react'
-import { SubscribeForm } from './SubscribeForm'
+import { SubscribeForm } from './subscribeForm'
 
 export const FindACTOSection = () => {
   return (
