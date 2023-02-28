@@ -7,7 +7,7 @@ export const LearnSection = () => {
     <div>
         <div>
             <h3>Learn</h3>
-            <div>
+            <div style={{ display: 'flex' }}>
                 <VerticleLine />
                 <p>Gain a comprehensive understanding of startup engineering with structured courses and mentorship.</p>
             </div>
